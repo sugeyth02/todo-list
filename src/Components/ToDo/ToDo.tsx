@@ -10,16 +10,17 @@ const ToDo = ({ toggleComplete, update, remove, toDo }: ToDoComponentProps) => {
     const toggleFrom = () => {
         setIsEditing(!isEditing);
     };
-    const handleChange = (task:string) => {
+    const handleChange = (task: string) => {
         setTask((prev) => ({ ...prev, task: task }));
+        console.log(task)
     };
   
     return (
         <Container>
             {isEditing ? <div className="Todo">
-                <form className="Todo-edit-form" onSubmit={(evt) => { evt.preventDefault(); update(toDo.id, task.task) }}>
-                    <input onChange={(evt) => handleChange(evt.target.value)} value={task.task} type="text" />
-                    <button>Save</button>
+                <form className="Todo-edit-form" onSubmit={(e) => { e.preventDefault(); update(task.id, task.task); toggleFrom()}}>
+                    <input onChange={(e) => handleChange(e.target.value)} value={task.task} type="text" />
+                    <button type='submit'>Save</button>
                 </form>
             </div> :
                 <div className="Todo">

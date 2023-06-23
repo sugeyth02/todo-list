@@ -13,11 +13,11 @@ const Form = ({ create }: FormType) => {
         setUserInput('');
     };
   return (
-      <Container className="NewTodoForm" onSubmit={(evt) => { evt.preventDefault(); handleSubmit() }}>
+      <Container className="NewTodoForm" onSubmit={(e) => { e.preventDefault(); handleSubmit() }}>
           <label htmlFor="task">New todo</label>
           <input
               value={userInput}
-              onChange={(evt)=>setUserInput(evt.target.value)}
+              onChange={(e)=>setUserInput(e.target.value)}
               id="task"
               type="text"
               name="task"
