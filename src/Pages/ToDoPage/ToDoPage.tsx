@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ToDo as ToDoType } from '../../types';
 import { Container } from './ToDoPage.styles';
-import { SubTitle, Title } from '../../styles/Typography';
+import { Paragraph, SubTitle, Title } from '../../styles/Typography';
 import ToDo from '../../Components/ToDo/ToDo';
 import Form from '../../Components/Form/Form';
 
@@ -36,7 +36,6 @@ function ToDoPage() {
       return todo;
     });
     setTodos(updatedTodos);
-    console.log(todos)
   };
 
   return (
@@ -44,6 +43,7 @@ function ToDoPage() {
       <Title>To Do List</Title>
       <div className='wrapper'>
         {todos.length === 0 && <SubTitle>Nothing yet, add something!</SubTitle>}
+        {todos.length && <Paragraph>Click on each task to completed</Paragraph>}
         {todos.map((item) => <ToDo key={item.id} toggleComplete={toggleComplete}
           update={update}
           remove={remove}

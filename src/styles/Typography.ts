@@ -30,6 +30,19 @@ export const SubTitle = styled.h2`
     line-height: 19px;
    }
 `
+export const Paragraph = styled.p`
+   font-family: 'Roboto';
+   font-style: normal;
+   font-weight: 200;
+   text-align: center;
+   font-size: 20px;
+   line-height: 24px;
+  color:${theme.colors.gray};
+  @media (max-width: ${theme.breakpoints.lg}) {
+    font-size: 16px;
+    line-height: 19px;
+   }
+`
 
 export const Label = styled.label`
     font-family: 'Montserrat';

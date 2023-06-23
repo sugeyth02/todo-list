@@ -13,7 +13,7 @@ const Form = ({ create }: FormType) => {
     const handleSubmit = () => {
         const newTodo:ToDo = { id: uuid(), task: userInput, complete: false };
         create(newTodo);
-        setUserInput('');
+        setUserInput("");
     };
 
   return (

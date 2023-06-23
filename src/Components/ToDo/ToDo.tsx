@@ -40,9 +40,9 @@ const ToDo = ({ toggleComplete, update, remove, toDo }: ToDoComponentProps) => {
                     {item.task}
                 </Item>
                 <div className='buttons'>
-                    <PrimaryButton onClick={toggleFrom}>
+                    {!item.complete && <PrimaryButton onClick={toggleFrom}>
                         <i className="fas fa-pen" />
-                    </PrimaryButton>
+                    </PrimaryButton>}
                     <PrimaryButton onClick={() => remove(item.id)}>
                         <i className="fas fa-trash" />
                     </PrimaryButton>
