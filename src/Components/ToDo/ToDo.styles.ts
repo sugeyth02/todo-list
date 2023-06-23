@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from '../../styles/Theme';
 
 export const Container = styled.div`
 .update-form{
@@ -20,4 +21,17 @@ export const Container = styled.div`
     }
 
 }
+ @media (max-width: ${theme.breakpoints.sm}) {
+    .update-form{
+    input{
+        width: 150px;
+    }
+} 
+.update-form, .item{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:24px;
+}
+
+ }
 `
