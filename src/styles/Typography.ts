@@ -16,7 +16,22 @@ export const Title = styled.h1`
      line-height: 29px;
    }
 `
-export const SectionTitle = styled.h3`
+export const SubTitle = styled.h2`
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    margin: 0;
+    color:${theme.colors.gray};
+
+    @media (max-width: ${theme.breakpoints.lg}) {
+    font-size: 16px;
+    line-height: 19px;
+   }
+`
+
+export const Label = styled.label`
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -35,8 +50,13 @@ export const Item = styled.li<{ complete: boolean }>`
    font-style: normal;
    font-weight: 300;
    font-size: 24px;
+   width: 400px;
    line-height: 28px;
-   text-decoration:  ${({ complete }) => complete ? 'line-through': 'none'};
+   text-decoration:  ${({ complete }) => complete ? 'line-through' : 'none'};
+   
+   &:hover{
+      cursor: pointer;
+   }
 
   @media (max-width: ${theme.breakpoints.lg}) {
     font-size: 16px;
