@@ -31,11 +31,12 @@ function ToDoPage() {
   const toggleComplete = (id: string) => {
     const updatedTodos = todos.map(todo => {
       if (todo.id === id) {
-        return { ...todo, completed: !todo.complete };
+        return { ...todo, complete: !todo.complete };
       }
       return todo;
     });
     setTodos(updatedTodos);
+    console.log(todos)
   };
 
   return (

@@ -27,12 +27,16 @@ export const SectionTitle = styled.h3`
        line-height: 20px;
    }
 `
-export const Paragraph = styled.p`
+export const Item = styled.li<{ complete: boolean }>`
+   display: flex;
+   gap: 8px;
+   align-items: center;
    font-family: 'Roboto';
    font-style: normal;
    font-weight: 300;
    font-size: 24px;
    line-height: 28px;
+   text-decoration:  ${({ complete }) => complete ? 'line-through': 'none'};
 
   @media (max-width: ${theme.breakpoints.lg}) {
     font-size: 16px;
