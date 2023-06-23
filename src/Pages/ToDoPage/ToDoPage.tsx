@@ -43,8 +43,8 @@ function ToDoPage() {
       <Title>To Do List</Title>
       <div className='wrapper'>
         {todos.length === 0 && <SubTitle>Nothing yet, add something!</SubTitle>}
-        {todos.length && <Paragraph>Click on each task to completed</Paragraph>}
-        {todos.map((item) => <ToDo key={item.id} toggleComplete={toggleComplete}
+        {todos.length > 0 && <Paragraph>Click on each task to completed</Paragraph>}
+        { todos.map((item) => <ToDo key={item.id} toggleComplete={toggleComplete}
           update={update}
           remove={remove}
           toDo={item} />)}
